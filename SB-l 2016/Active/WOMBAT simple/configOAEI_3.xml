@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE LIMES SYSTEM "limes.dtd">
+<LIMES>	
+	<PREFIX>
+		<NAMESPACE>http://www.w3.org/2002/07/owl#</NAMESPACE>
+		<LABEL>owl</LABEL>
+	</PREFIX>
+	<PREFIX>
+		<NAMESPACE>http://www.w3.org/1999/02/22-rdf-syntax-ns#</NAMESPACE>
+		<LABEL>rdf</LABEL>
+	</PREFIX>
+	<PREFIX>
+		<NAMESPACE>http://www.bbc.co.uk/ontologies/creativework/</NAMESPACE>
+		<LABEL>cw</LABEL>
+	</PREFIX>
+	<PREFIX>
+		<NAMESPACE>http://www.bbc.co.uk/ontologies/bbc/</NAMESPACE>
+		<LABEL>bbc</LABEL>
+	</PREFIX>
+	<SOURCE>
+		<ID>source</ID>
+		<ENDPOINT>C:/Users/Manel/Videos/limes/source.nt</ENDPOINT>
+		<VAR>?x</VAR>
+		<PAGESIZE>500000</PAGESIZE>
+		<RESTRICTION>?x rdf:type cw:Programme</RESTRICTION>
+		<PROPERTY>cw:title</PROPERTY>
+		<PROPERTY>cw:about</PROPERTY>
+		<TYPE>N-TRIPLES</TYPE>
+	</SOURCE>
+	<TARGET>
+		<ID>target</ID>
+		<ENDPOINT>C:/Users/Manel/Videos/limes/target.nt</ENDPOINT>
+		<VAR>?y</VAR>
+		<PAGESIZE>500000</PAGESIZE>
+		<RESTRICTION>?x rdf:type cw:Programme</RESTRICTION>
+		<PROPERTY>cw:title</PROPERTY>
+		<PROPERTY>cw:about</PROPERTY>
+		<TYPE>N-TRIPLES</TYPE>
+	</TARGET>
+	<MLALGORITHM>
+        	<NAME>wombat simple</NAME>
+	        <TYPE>active</TYPE>
+	</MLALGORITHM>
+	
+	<ACCEPTANCE>
+		<THRESHOLD>0.02</THRESHOLD>
+		<FILE>results.nt</FILE>
+		<RELATION>owl:sameAs</RELATION>
+	</ACCEPTANCE>
+	<REVIEW>
+		<THRESHOLD>0.01</THRESHOLD>
+		<FILE>output_review.nt</FILE>
+		<RELATION>owl:near</RELATION>
+	</REVIEW>
+	<EXECUTION>
+		<REWRITER>default</REWRITER>
+		<PLANNER>default</PLANNER>
+		<ENGINE>default</ENGINE>
+	</EXECUTION>
+	<OUTPUT>TAB</OUTPUT>
+</LIMES>

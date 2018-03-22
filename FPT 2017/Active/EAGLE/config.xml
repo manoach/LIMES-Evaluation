@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE LIMES SYSTEM "limes.dtd">
+<LIMES>	
+	<PREFIX>
+		<NAMESPACE>http://www.w3.org/2002/07/owl#</NAMESPACE>
+		<LABEL>owl</LABEL>
+	</PREFIX>
+	<PREFIX>
+		<NAMESPACE>http://erlangen-crm.org/current/</NAMESPACE>
+		<LABEL>ecrm</LABEL>
+	</PREFIX>
+	<PREFIX>
+		<NAMESPACE>http://erlangen-crm.org/efrbroo/</NAMESPACE>
+		<LABEL>efrbroo</LABEL>
+	</PREFIX>
+	<PREFIX>
+		<NAMESPACE>http://data.doremus.org/ontology#</NAMESPACE>
+		<LABEL>mus</LABEL>
+	</PREFIX>
+	<PREFIX>
+		<NAMESPACE>http://www.w3.org/2000/01/rdf-schema#</NAMESPACE>
+		<LABEL>rdfs</LABEL>
+	</PREFIX>
+	<PREFIX>
+		<NAMESPACE>http://xmlns.com/foaf/0.1/</NAMESPACE>
+		<LABEL>foaf</LABEL>
+	</PREFIX>
+	<PREFIX>
+		<NAMESPACE>http://purl.org/dc/terms/</NAMESPACE>
+		<LABEL>dcterms</LABEL>
+	</PREFIX>
+	<PREFIX>
+		<NAMESPACE>http://www.w3.org/1999/02/22-rdf-syntax-ns#</NAMESPACE>
+		<LABEL>rdf</LABEL>
+	</PREFIX>
+	
+	<SOURCE>
+		<ID>source</ID>
+		<ENDPOINT>C:/Users/Manel/Videos/limes/source.ttl</ENDPOINT>
+		<VAR>?x</VAR>
+		<PAGESIZE>50000</PAGESIZE>
+		<RESTRICTION>?x rdf:type efrbroo:F22_Self-Contained_Expression</RESTRICTION>
+		<PROPERTY>mus:U16_has_catalogue_statement</PROPERTY>
+		<TYPE>TTL</TYPE>
+	</SOURCE>
+	<TARGET>
+		<ID>target</ID>
+		<ENDPOINT>C:/Users/Manel/Videos/limes/target.ttl</ENDPOINT>
+		<VAR>?y</VAR>
+		<PAGESIZE>50000</PAGESIZE>		
+		<RESTRICTION>?y rdf:type efrbroo:F22_Self-Contained_Expression</RESTRICTION>
+		<PROPERTY>mus:U16_has_catalogue_statement</PROPERTY>
+		<TYPE>TTL</TYPE>
+	</TARGET>
+	<MLALGORITHM>
+        	<NAME>eagle</NAME>
+	        <TYPE>active</TYPE>
+	</MLALGORITHM>
+	
+	<ACCEPTANCE>
+		<THRESHOLD>0.02</THRESHOLD>
+		<FILE>results.nt</FILE>
+		<RELATION>owl:sameAs</RELATION>
+	</ACCEPTANCE>
+	<REVIEW>
+		<THRESHOLD>0.01</THRESHOLD>
+		<FILE>output_review.nt</FILE>
+		<RELATION>owl:near</RELATION>
+	</REVIEW>
+	<EXECUTION>
+		<REWRITER>default</REWRITER>
+		<PLANNER>default</PLANNER>
+		<ENGINE>default</ENGINE>
+	</EXECUTION>
+	<OUTPUT>TAB</OUTPUT>
+</LIMES>
